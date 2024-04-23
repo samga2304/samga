@@ -388,8 +388,12 @@ def schedule_index(request):
 # Список для просмотра
 @login_required
 def schedule_list(request):
-    schedule = Schedule.objects.all().order_by('-dates', 'groups')
-    return render(request, "schedule/list.html", {"schedule": schedule})
+    try:
+        schedule = Schedule.objects.all().order_by('-dates', 'groups')
+        return render(request, "schedule/list.html", {"schedule": schedule})
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
 
 # В функции create() получаем данные из запроса типа POST, сохраняем данные с помощью метода save()
 # и выполняем переадресацию на корень веб-сайта (то есть на функцию index).
