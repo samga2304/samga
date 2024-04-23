@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-6aqu8h+-u))26sf4*8-v0!rmbb=sswtls$up4d=h5$5m!*8jp8
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'samga.onrender.com',]
+ALLOWED_HOSTS = ['127.0.0.1', 'samga-y849.onrender.com',]
 
 # Application definition
 
