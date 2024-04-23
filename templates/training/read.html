@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "training" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h4>{{ training.title }}</h4>			
+		</div>
+		<div class="card-body">		
+			<p>{{ training.details }}</p>					
+		</div>
+		<div class="card-footer">				
+			<p></p>			
+		</div>		
+	</div>
+	<div class="div-button-left">
+		<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'training_index' %}">{% trans "Back" %}</a>    
+	</div>
+</div>
+
+{% endblock content %}

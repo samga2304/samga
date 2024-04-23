@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "App name" %}{% endblock title %}
+{% block header %}
+	
+{% endblock header %}
+{% block content %}
+
+<div class="div-width-100-text-center">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>ҰБТ-дан қалай 100+ балды оңай алуға болады?</h3>	
+	{% else %}
+		<h3>Как легко набрать 100+ на ЕНТ?</h3>	
+	{% endif %}	
+</div>
+<div class="part0">
+	<div class="row justify-content-center;">
+		<div>
+			<img class="img-center" src="{% static 'images/logo.png' %}" alt="student" style="width:400px; padding: 10px;">
+		</div>
+		<div class="row" style="padding: 50px;">
+			{% if LANGUAGE_CODE == 'kk' %}	
+				<h4 style="text-align: center">«SAMGA ACADEMY» Қарағанды қаласы бойынша №1 ҰБТ-ға дайындық орталығы саған қалай көмектесу керектігін біледі</h4>
+			{% else %}					
+				<h4 style="text-align: center">«SAMGA ACADEMY» — центр подготовки к ЕНТ №1 в г. Караганда, знает, как Вам помочь</h4>
+			{% endif %}	
+		</div>
+		<!-- <div class="row" style="background-image: url({% static 'images/background08.png' %}); background-position: center; background-repeat: no-repeat;padding: 10px; "> -->
+		<div style="background-color: Gold;padding: 50px;">
+			{% if LANGUAGE_CODE == 'kk' %}
+				<h5 style="text-align: center">3 жылда 1300+ түлекті оқыттық. Бізге келіп, нәтижелі дайындығыңды баста! SAMGA оқушыларының ҰБТ-дан жинайтын орташа балы 84, ал бізбен бірге дайындалып 140 алған оқушымызға біз 1 000 000 тг сыйлаймыз!</h5>
+			{% else %}	
+				<h5 style="text-align: center">Мы подготовили 1300+ выпускников за 3 года. Приходите к нам и начните свою эффективную подготовку! Студенты САМГА имеют средний балл 84, а студенту, который подготовится с нами и наберет 140, мы дадим 1 000 000 тг!</h5>
+			{% endif %}
+		</div>
+	</div>
+</div>
+<div class="div-button-left">
+	<button onclick="location.href='{% url 'claim_create' %}'" class="btn btn-outline-info">{% trans "claim create" %}</button>	
+</div>
+<hr>
+<div class="div-width-100-text-center">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Біз сізге көмектесеміз</h3>	
+	{% else %}
+		<h3>Мы поможем тебе</h3>	
+	{% endif %}	
+</div>
+<div class="part1">
+	<div class="row" >
+		<div class="col-md-4">	
+			<div style="background-color: LightSalmon;padding: 50px; margin: 1px; height: 100%">	
+			{% if LANGUAGE_CODE == 'kk' %}			
+				<h4>Университетке түсуге!</h4>
+				<p>ҰБТ-ға 9 айдың ішінде ГРАНТ ГАРАНТИЯСЫМЕН нәтижелі және қолжетімді дайындаймыз</p>
+				<p>Сіз қалаған университетіңізде грант иегері атанасыз</p>
+				<p>Бізде оқып сіз жоғары балл жинап, қалаған университетіңізге барасыз және грантқа түсесіз</p>
+				<p>Ең бастысы - сабақты өткізіп алмау және барлық үй тапсырмаларын</p>
+			{% else %}
+				<h4>Чтобы поступить в университет!</h4>
+				<p>Готовим эффективно и недорого к ЕНТ за 9 месяцев С ГАРАНТИЕЙ ГРАНТА</p>
+				<p>Вы будете награждены грантом в университете по вашему выбору</p>
+				<p>Обучаясь у нас, вы получите высокие оценки, поступите в выбранный вами университет и получите грант</p>
+				<p>Главное не пропускать занятия и делать все домашние задания</p>
+			{% endif %}			
+			</div>										
+		</div>										
+		<div class="col-md-4">
+			<div style="background-color: PaleGreen;padding: 50px; margin: 1px; height: 100%">
+			{% if LANGUAGE_CODE == 'kk' %}			
+				<h4>Таңдау пәндеріне дайындалуға</h4>
+				<p>Физика, математика, биология, химия және басқа да күрделі пәндер бойынша сізді білікті ұстаздар және ҰБТ сарапшылары  дайындайды</p>
+			{% else %}
+				<h4>Для подготовки к факультативным предметам</h4>
+				<p>Квалифицированные преподаватели и специалисты ЕНТ подготовят вас к физике, математике, биологии, химии и другим сложным предметам</p>
+			{% endif %}
+			</div>				
+		</div>				
+		<div class="col-md-4">
+			<div style="background-color: Aquamarine;padding: 50px; margin: 1px; height: 100%">
+			{% if LANGUAGE_CODE == 'kk' %}			
+				<h4>Қалаған балыңызды алуға</h4>
+				<p>Мақсатыңызға қойған 100+, 120+ немесе барлық 140 балды алуға көмектесіп, бағыт бағдар береміз</p>
+			{% else %}
+				<h4>Чтобы получить бал, который вы хотите</h4>
+				<p>Мы поможем и направим вас к достижению вашей цели 100+, 120+ или все 140 баллов.</p>
+			{% endif %}
+			</div>				
+		</div>				
+	</div>	
+</div>
+<div class="div-button-left">
+	<button onclick="location.href='{% url 'claim_create' %}'" class="btn btn-outline-info">{% trans "claim create" %}</button>	
+</div>
+<hr>
+<div class="div-width-100-text-center">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Сізге Қарағанды қаласының білікті ұстаздары сабақ береді</h3>
+	{% else %}
+		<h3>Вас будут обучать квалифицированные преподаватели Караганды</h3>
+	{% endif %}	
+</div>
+<div class="teachers">
+	<div style="margin-top:50px;">	
+		{% if LANGUAGE_CODE == 'kk' %}		
+			<h4 style="text-align: center">Біздің ұстаздар сіздерге қалай тиімді дайындалып, қиын тапсырмаларды жеңілдету арқылы ҰБТ-ны оңай тапсыруды үйретеді</h4>
+		{% else %}
+			<h4 style="text-align: center">Наши преподаватели научат вас эффективно и легко подготовиться к сдаче ЕНТ, упростив сложные задания</h4>
+		{% endif %}
+	</div>
+	<div class="row" style="margin-top:50px;">	
+		{% if teachers.count > 0 %}
+			{% for c in teachers %}
+			<div class="col-lg-2 border" style="padding:10px;">
+				{% if c.photo.url == "/ media /images/woman1.jpg" %}
+					<img class="img-center" src="{% static 'images/woman1.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/woman2.jpg" %}
+					<img class="img-center" src="{% static 'images/woman2.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/woman3.jpg" %}
+					<img class="img-center" src="{% static 'images/woman3.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/woman4.jpg" %}
+					<img class="img-center" src="{% static 'images/woman4.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/woman5.jpg" %}
+					<img class="img-center" src="{% static 'images/woman5.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/woman6.jpg" %}
+					<img class="img-center" src="{% static 'images/woman6.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/woman7.jpg" %}
+					<img class="img-center" src="{% static 'images/woman7.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/male1.jpg" %}
+					<img class="img-center" src="{% static 'images/male1.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/male2.jpg" %}
+					<img class="img-center" src="{% static 'images/male2.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% elif c.photo.url == "/ media /images/male3.jpg" %}
+					<img class="img-center" src="{% static 'images/male3.jpg' %}" alt="{{ c.fio }}" title="{{ c.details }}">    
+				{% else %}
+					{% if c.photo.url != None %}
+						<img class="img-center" src="{{ c.photo.url}}" alt="{{ c.fio }}" title="{{ c.details }}">
+					{% endif %}
+				{% endif %}
+				<h4>{{ c.fio }}</h4>
+				<h5>{{ c.details }}</h5>
+			</div>
+			{% endfor %}
+		{% endif %}						
+	</div>	
+	<div class="row" style="margin-top: 20px;">
+		<h3 style="text-align: center;"><a href="{% url 'teachers_list'%}">{% trans "teachers" %}</a></h3>
+	</div>	
+</div>
+<div class="div-button-left">
+	<button onclick="location.href='{% url 'claim_create' %}'" class="btn btn-outline-info">{% trans "claim create" %}</button>	
+</div>
+<hr>
+<div class="div-width-100-text-center">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Біз ҰБТ-ға қалай дайындаймыз?</h3>			
+	{% else %}
+		<h3>Как мы готовимся к ЕНТ?</h3>			
+	{% endif %}	
+</div>
+<div class="part3">
+	<div class="row">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: PaleTurquoise;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d1.png' %}" alt="1" style="height:72px; padding: 5px;"></h1>
+				<p>ҰБТ-ға дайындық курсы 4 пәннен комплексті түрде өтеді.<br> 
+				Ол пәндер:<br> 
+				✔️Қазақстан тарихы<br> 
+				✔️Математикалық сауаттылық <br> 
+				✔️Таңдау пәні<br> 
+				✔️Бейіндік пән<br> 
+				✔️Тьютормен жұмыс<br> 
+				Егер сен әлі де мамандық таңдамасаң, тегін консультация алуыңа болады</p>
+			</div>		
+        </div>		
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: Aquamarine;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d2.png' %}" alt="2" style="height:72px; padding: 5px;"></h1>
+				<p>Пәнді түсінуге және жақсы көруге көмектесеміз<br>
+				Емтихан кезінде сіз қобалжымайсыз және теореманы еске түсіруге тырыспайсыз, өйткені біз тақырыпты түсінуге көмектесеміз</p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: Thistle;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d3.png' %}" alt="3" style="height:72px; padding: 5px;"></h1>
+				<p>Біздің тьюторлар сіздерді әрдайым қолдауға дайын<br>
+				Біз сізді мектептегідей қорқытпаймыз,   ең алдымен қолдау көрсетеміз және қорқынышты жеңуге көмектесеміз</p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: PeachPuff;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d4.png' %}" alt="4" style="height:72px; padding: 5px;"></h1>
+				<p>1 айда 56 сабақтық нәтижелі оқу<br>
+				Сабақтар аптасына 3 рет сағат 15:00-19:20 аралығында қойылады.<br>
+				Бір сабақтың ұзақтығы 80 минут.<br>
+				Айына ҰТО базасынан 2 ТЕГІН ҰБТ форматындағы тестілеу<br>
+				Қарағанды қаласы бойынша білікті ұстаздар<br>
+				ЖОО таңдау бойынша консультация<br>
+				Оффлайн және онлайн режимдегі сабақтар<br>
+				Куратор және мұғаліммен кері байланыс</p>
+			</div>		
+		</div>		
+	{% else %}
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: PaleTurquoise;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d1.png' %}" alt="1" style="height:72px; padding: 5px;"></h1>
+				<p>Подготовительный курс к ЕНТ состоит из 4 предметов комплексно.<br>
+				Те предметы:<br>
+				✔️ История Казахстана<br>
+				✔️ Математическая грамотность<br>
+				✔️ Факультативный предмет<br>
+				✔️ Визуальный предмет<br>
+				✔️ Работа с репетитором<br>
+				Если вы еще не выбрали профессию, вы можете получить бесплатную консультацию</p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: Aquamarine;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d2.png' %}" alt="2" style="height:72px; padding: 5px;"></h1>
+				<p>Помогаем понять и полюбить предмет<br>
+				Во время экзамена вы не будете нервничать и не будете пытаться запомнить теорему, ведь мы поможем вам разобраться в теме</p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: Thistle;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d3.png' %}" alt="3" style="height:72px; padding: 5px;"></h1>
+				<p>Наши преподаватели всегда готовы поддержать вас<br>
+				Мы не будем вас пугать, как в школе, а прежде всего поддержим и поможем преодолеть страх</p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-6 thumb">
+			<div style="background-color: PeachPuff;padding: 10px; margin: 1px; height: 100%">
+				<h1><img src="{% static 'images/d4.png' %}" alt="4" style="height:72px; padding: 5px;"></h1>
+				<p>Эффективное изучение 56 уроков за 1 месяц<br>
+				Занятия проходят 3 раза в неделю с 15:00 до 19:20.<br>
+				Продолжительность одного занятия – 80 минут.<br>
+				2 БЕСПЛАТНЫХ теста формата ЕНТ из базы НТО в месяц<br>
+				Квалифицированные преподаватели в городе Караганда<br>
+				Консультация по выбору вуза<br>
+				Оффлайн и онлайн классы<br>
+				Отзывы кураторов и учителей</p>
+			</div>		
+		</div>		
+	{% endif %}		
+	</div>
+	<div class="row justify-content-center;" style="margin-top: 20px;">
+		{% if LANGUAGE_CODE == 'kk' %}
+			<h3 style="text-align: center;">Тағы да сұрақтарыңыз болса, тегін консультация бойынша жаз</h3>			
+		{% else %}
+			<h3 style="text-align: center;">Если остались вопросы, пишите на бесплатную консультацию</h3>			
+		{% endif %}	
+	</div>
+</div>
+<div class="div-button-left">
+	<button onclick="location.href='{% url 'claim_create' %}'" class="btn btn-outline-info">{% trans "claim create" %}</button>	
+</div>
+<hr>
+<div class="div-width-100-text-center">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Біз туралы пікірлер</h3>			
+	{% else %}
+		<h3>Отзывы о нашей работе</h3>			
+	{% endif %}	
+</div>
+<div class="reviews">
+	<div class="row">
+		{% if reviews.count > 0 %}
+			{% for r in reviews %}
+				<div class="col-lg-3 border" >
+					<div style="background-color: Bisque;padding: 10px; margin: 1px; height: 100%">
+						<h6> {{ r.user }}</h6>
+						<p><div class="Stars" style='--rating: {{ r.rating | stringformat:".1f" }};'></div></p>							
+						<blockquote>{{ r.details | slice:"0:255" }}...</blockquote>
+						<p>{{ r.dater | date:"d.m.Y H:i" }}</p>					
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}						
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<h3 style="text-align: center;"><a href="{% url 'reviews_list'%}">{% trans "reviews" %}</a></h3>
+	</div>	
+	<div class="row">
+	{% if user.is_authenticated %}	
+		<p style="text-align: center;"><a href="{% url 'reviews_create'%}">{% trans "Add" %}</a></p>
+	{% endif %}
+	</div>	
+</div>
+<div class="div-button-left">
+	<button onclick="location.href='{% url 'claim_create' %}'" class="btn btn-outline-info">{% trans "claim create" %}</button>	
+</div>
+<hr>
+<div class="div-width-100-text-center">
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Сұрақтар қалды ма?</h3>			
+	{% else %}
+		<h3>Остались вопросы?</h3>			
+	{% endif %}	
+</div>
+<div class="part4" >
+	{% if LANGUAGE_CODE == 'kk' %}
+		<div class="row" style="margin-top: 100px;margin-bottom: 100px;">
+			<h3>Өтініш қалдырыңыз</h3>		
+			<h3>Біз сізге қоңырау шаламыз</h3>		
+			<h3>Әр түрлі тақырыптағы психологиялық және дамытушылық тренингтер</h3>		
+		</div>				
+	{% else %}
+		<div class="row" style="margin-top: 100px;margin-bottom: 100px;">			
+			<h3>Оставить заявку</h3>
+			<h3>Мы вам позвоним</h3>
+			<h3>Задавайте вопросы, мы ответим на них и поможем выбрать факультатив</h3>
+		</div>				
+	{% endif %}
+</div>
+<div class="div-button-left">
+	<button onclick="location.href='{% url 'claim_create' %}'" class="btn btn-outline-info">{% trans "claim create" %}</button>	
+</div>
+<hr>
+
+
+
+{% endblock content %}

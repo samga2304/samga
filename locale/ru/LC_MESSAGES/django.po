@@ -1,0 +1,552 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-31 20:45+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
+"100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\academy\forms.py:31 .\academy\forms.py:39 .\academy\forms.py:48
+msgid "Value must start with a capital letter"
+msgstr "Значение должно начинаться с заглавной буквы"
+
+#: .\academy\forms.py:80 .\academy\forms.py:191 .\templates\base.html:69
+#: .\templates\cabinet.html:17 .\templates\cabinet.html:22
+#: .\templates\cabinet.html:54 .\templates\claim\edit.html:20
+#: .\templates\claim\index.html:13 .\templates\groups\index.html:12
+#: .\templates\members\index.html:12 .\templates\schedule\index.html:13
+#: .\templates\schedule\list.html:16 .\templates\training\create.html:6
+#: .\templates\training\edit.html:6 .\templates\training\read.html:7
+msgid "training"
+msgstr "Курсы"
+
+#: .\academy\forms.py:81 .\templates\base.html:47 .\templates\base.html:68
+#: .\templates\groups\index.html:15 .\templates\groups\read.html:18
+#: .\templates\index.html:148 .\templates\teachers\create.html:6
+#: .\templates\teachers\edit.html:6 .\templates\teachers\read.html:7
+msgid "teachers"
+msgstr "Наши преподаватели"
+
+#: .\academy\forms.py:101 .\academy\forms.py:122 .\templates\base.html:70
+#: .\templates\groups\create.html:6 .\templates\groups\edit.html:6
+#: .\templates\groups\index.html:6 .\templates\groups\read.html:7
+#: .\templates\schedule\index.html:14 .\templates\schedule\list.html:17
+msgid "groups"
+msgstr "Учебные группы"
+
+#: .\academy\forms.py:102 .\academy\forms.py:152 .\academy\views.py:845
+#: .\templates\cabinet.html:24 .\templates\cabinet.html:85
+#: .\templates\claim\edit.html:16 .\templates\members\index.html:14
+#: .\templates\payment\index.html:24 .\templates\payment\index.html:68
+#: .\templates\reviews\index.html:16
+msgid "user"
+msgstr "Пользователь"
+
+#: .\academy\forms.py:130 .\academy\forms.py:160 .\academy\forms.py:225
+msgid "Wrong date and time format"
+msgstr "Неправильный формат даты и времени"
+
+#: .\academy\forms.py:169
+msgid "Amount must be greater than zero"
+msgstr "Сумма должна быть больше нуля"
+
+#: .\academy\models.py:38 .\templates\teachers\index.html:12
+msgid "surname"
+msgstr "Фамилия"
+
+#: .\academy\models.py:39 .\templates\teachers\index.html:13
+msgid "name"
+msgstr "Имя"
+
+#: .\academy\models.py:40 .\templates\teachers\index.html:14
+msgid "patronymic"
+msgstr "Отчество"
+
+#: .\academy\models.py:41
+msgid "details_teachers"
+msgstr "Специализация"
+
+#: .\academy\models.py:42
+msgid "photo_teachers"
+msgstr "Фотография"
+
+#: .\academy\models.py:72
+msgid "training_title"
+msgstr "Название курса"
+
+#: .\academy\models.py:73
+msgid "training_details"
+msgstr "Детали курса"
+
+#: .\academy\models.py:91 .\templates\cabinet.html:23
+#: .\templates\cabinet.html:55 .\templates\groups\index.html:13
+#: .\templates\members\index.html:13
+msgid "group_title"
+msgstr "Шифр группы"
+
+#: .\academy\models.py:92
+msgid "group_details"
+msgstr "Описание"
+
+#: .\academy\models.py:127 .\templates\cabinet.html:53
+#: .\templates\schedule\index.html:12 .\templates\schedule\list.html:15
+msgid "dates"
+msgstr "Дата"
+
+#: .\academy\models.py:148 .\templates\cabinet.html:84
+#: .\templates\payment\index.html:23
+msgid "datep"
+msgstr "Дата"
+
+#: .\academy\models.py:149 .\academy\views.py:846 .\templates\cabinet.html:86
+#: .\templates\payment\index.html:25 .\templates\payment\index.html:69
+msgid "amount"
+msgstr "Сумма"
+
+#: .\academy\models.py:164
+msgid "dater_reviews"
+msgstr "Дата отзыва"
+
+#: .\academy\models.py:165
+msgid "rating"
+msgstr "Оценка"
+
+#: .\academy\models.py:166
+msgid "details_reviews"
+msgstr "Текст отзыва"
+
+#: .\academy\models.py:181
+msgid "dater_claim"
+msgstr "Дата заявки"
+
+#: .\academy\models.py:184
+msgid "claim_details"
+msgstr "Детали заявки"
+
+#: .\academy\models.py:185 .\templates\claim\index.html:15
+msgid "result"
+msgstr "Результат"
+
+#: .\academy\models.py:199 .\templates\news\index.html:12
+msgid "daten"
+msgstr "Дата"
+
+#: .\academy\models.py:200
+msgid "title_news"
+msgstr "Заголовок новости"
+
+#: .\academy\models.py:201
+msgid "details_news"
+msgstr "Детали новости"
+
+#: .\academy\models.py:202
+msgid "photo_news"
+msgstr "Фотография"
+
+#: .\academy\views.py:843 .\templates\payment\index.html:66
+msgid "year"
+msgstr "Год"
+
+#: .\academy\views.py:844 .\templates\payment\index.html:67
+msgid "month"
+msgstr "Месяц"
+
+#: .\academy\views.py:847 .\templates\payment\index.html:70
+msgid "total"
+msgstr "Всего"
+
+#: .\templates\base.html:36 .\templates\registration\logged_out.html:4
+#: .\templates\registration\login.html:4
+#: .\templates\registration\password_change_done.html:3
+#: .\templates\registration\password_change_form.html:3
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\register_done.html:4
+msgid "App Name"
+msgstr "Samga Academy"
+
+#: .\templates\base.html:44
+msgid "about"
+msgstr "О нас"
+
+#: .\templates\base.html:48 .\templates\base.html:72
+#: .\templates\schedule\create.html:6 .\templates\schedule\edit.html:6
+#: .\templates\schedule\read.html:7
+msgid "schedule"
+msgstr "Расписание"
+
+#: .\templates\base.html:49 .\templates\base.html:74
+#: .\templates\index.html:283 .\templates\reviews\create.html:6
+#: .\templates\reviews\index.html:7 .\templates\reviews\list.html:8
+msgid "reviews"
+msgstr "Отзывы"
+
+#: .\templates\base.html:51 .\templates\news\create.html:6
+#: .\templates\news\edit.html:6 .\templates\news\read.html:7
+msgid "news"
+msgstr "Новости"
+
+#: .\templates\base.html:52 .\templates\contact.html:7
+msgid "contacts"
+msgstr "Контакты"
+
+#: .\templates\base.html:56
+msgid "faq"
+msgstr "Ответы на вопросы"
+
+#: .\templates\base.html:60 .\templates\cabinet.html:7
+msgid "cabinet"
+msgstr "Личный кабинет"
+
+#: .\templates\base.html:71 .\templates\groups\read.html:27
+#: .\templates\members\index.html:3 .\templates\members\index.html:6
+msgid "memberss"
+msgstr "Состав групп"
+
+#: .\templates\base.html:73 .\templates\cabinet.html:79
+#: .\templates\payment\index.html:3 .\templates\payment\index.html:17
+msgid "payments"
+msgstr "Платежи"
+
+#: .\templates\base.html:76 .\templates\claim\index.html:3
+#: .\templates\claim\index.html:6
+msgid "claims"
+msgstr "Заявки"
+
+#: .\templates\base.html:78 .\templates\news\index.html:3
+#: .\templates\news\index.html:6 .\templates\news\list.html:4
+#: .\templates\news\list.html:8
+msgid "newss"
+msgstr "Новости"
+
+#: .\templates\base.html:83 .\templates\cabinet.html:12
+#: .\templates\registration\my_account.html:4
+#: .\templates\registration\my_account.html:10
+msgid "My account"
+msgstr "Моя учетная запись"
+
+#: .\templates\base.html:84 .\templates\cabinet.html:14
+#: .\templates\registration\password_change_form.html:9
+#: .\templates\registration\password_change_form.html:15
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\templates\base.html:86
+msgid "Log out"
+msgstr "Выйти"
+
+#: .\templates\base.html:91
+msgid "Log In"
+msgstr "Войти"
+
+#: .\templates\base.html:92 .\templates\registration\signup.html:4
+#: .\templates\registration\signup.html:10
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\templates\cabinet.html:48 .\templates\schedule\index.html:3
+#: .\templates\schedule\index.html:6 .\templates\schedule\list.html:3
+#: .\templates\schedule\list.html:7
+msgid "schedules"
+msgstr "Расписание"
+
+#: .\templates\claim\create.html:3 .\templates\claim\index.html:46
+#: .\templates\groups\create.html:3 .\templates\groups\index.html:45
+#: .\templates\members\create.html:3 .\templates\members\index.html:42
+#: .\templates\news\create.html:3 .\templates\news\index.html:45
+#: .\templates\payment\create.html:3 .\templates\payment\index.html:53
+#: .\templates\reviews\create.html:3 .\templates\schedule\create.html:3
+#: .\templates\schedule\index.html:41 .\templates\teachers\create.html:3
+#: .\templates\teachers\index.html:41 .\templates\training\create.html:3
+#: .\templates\training\index.html:37
+msgid "Create"
+msgstr "Добавить"
+
+#: .\templates\claim\create.html:6 .\templates\claim\edit.html:6
+#: .\templates\claim\read.html:7
+msgid "claim"
+msgstr "Заявка"
+
+#: .\templates\claim\create.html:13 .\templates\claim\edit.html:34
+#: .\templates\groups\create.html:13 .\templates\groups\edit.html:13
+#: .\templates\members\create.html:13 .\templates\members\edit.html:13
+#: .\templates\news\create.html:13 .\templates\news\edit.html:13
+#: .\templates\payment\create.html:13 .\templates\payment\edit.html:13
+#: .\templates\reviews\create.html:13 .\templates\schedule\create.html:13
+#: .\templates\schedule\edit.html:13 .\templates\teachers\create.html:13
+#: .\templates\teachers\edit.html:13 .\templates\training\create.html:13
+#: .\templates\training\edit.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\claim\create.html:14 .\templates\claim\edit.html:35
+#: .\templates\claim\read.html:24 .\templates\groups\create.html:14
+#: .\templates\groups\edit.html:14 .\templates\groups\read.html:22
+#: .\templates\members\create.html:14 .\templates\members\edit.html:14
+#: .\templates\members\read.html:23 .\templates\news\create.html:14
+#: .\templates\news\edit.html:14 .\templates\news\read.html:53
+#: .\templates\payment\create.html:14 .\templates\payment\edit.html:14
+#: .\templates\payment\read.html:21 .\templates\reviews\create.html:14
+#: .\templates\schedule\create.html:14 .\templates\schedule\edit.html:14
+#: .\templates\schedule\read.html:21 .\templates\teachers\create.html:14
+#: .\templates\teachers\edit.html:14 .\templates\teachers\read.html:53
+#: .\templates\training\create.html:14 .\templates\training\edit.html:14
+#: .\templates\training\read.html:21
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\claim\edit.html:3 .\templates\claim\index.html:36
+#: .\templates\groups\edit.html:3 .\templates\groups\index.html:35
+#: .\templates\members\edit.html:3 .\templates\members\index.html:32
+#: .\templates\news\edit.html:3 .\templates\news\index.html:35
+#: .\templates\payment\edit.html:3 .\templates\payment\index.html:43
+#: .\templates\schedule\edit.html:3 .\templates\schedule\index.html:31
+#: .\templates\teachers\edit.html:3 .\templates\teachers\index.html:31
+#: .\templates\training\edit.html:3 .\templates\training\index.html:27
+msgid "Change"
+msgstr "Изменить"
+
+#: .\templates\claim\edit.html:12 .\templates\claim\index.html:12
+#: .\templates\reviews\index.html:15
+msgid "dater"
+msgstr "Дата"
+
+#: .\templates\claim\edit.html:24
+msgid "Claim_details"
+msgstr "Детали заявки"
+
+#: .\templates\claim\index.html:14 .\templates\groups\index.html:14
+#: .\templates\training\index.html:13
+msgid "details"
+msgstr "Детали"
+
+#: .\templates\claim\index.html:37 .\templates\groups\index.html:36
+#: .\templates\members\index.html:33 .\templates\news\index.html:36
+#: .\templates\payment\index.html:44 .\templates\schedule\index.html:32
+#: .\templates\teachers\index.html:32 .\templates\training\index.html:28
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\claim\index.html:38 .\templates\groups\index.html:37
+#: .\templates\members\index.html:34 .\templates\news\index.html:37
+#: .\templates\payment\index.html:45 .\templates\reviews\index.html:35
+#: .\templates\schedule\index.html:33 .\templates\teachers\index.html:33
+#: .\templates\training\index.html:29
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\claim\read.html:4 .\templates\groups\read.html:4
+#: .\templates\members\read.html:4 .\templates\news\read.html:4
+#: .\templates\payment\read.html:4 .\templates\schedule\read.html:4
+#: .\templates\teachers\read.html:4 .\templates\training\read.html:4
+msgid "Read"
+msgstr "Просмотреть"
+
+#: .\templates\faq.html:8
+msgid "FAQ"
+msgstr "Ответы на вопросы"
+
+#: .\templates\groups\index.html:3
+msgid "groupss"
+msgstr "Группы"
+
+#: .\templates\groups\index.html:16 .\templates\index.html:287
+#: .\templates\members\index.html:15 .\templates\news\index.html:15
+#: .\templates\payment\index.html:26 .\templates\schedule\index.html:15
+#: .\templates\teachers\index.html:15 .\templates\training\index.html:14
+msgid "Add"
+msgstr "Добавить"
+
+#: .\templates\groups\read.html:42 .\templates\payment\read.html:22
+msgid "Print"
+msgstr "Печать"
+
+#: .\templates\index.html:4
+msgid "App name"
+msgstr "Samga Academy"
+
+#: .\templates\index.html:40 .\templates\index.html:94
+#: .\templates\index.html:152 .\templates\index.html:257
+#: .\templates\index.html:292 .\templates\index.html:318
+msgid "claim create"
+msgstr "Подать заявку"
+
+#: .\templates\members\create.html:6 .\templates\members\edit.html:6
+#: .\templates\members\read.html:7
+msgid "members"
+msgstr "Состав группы"
+
+#: .\templates\news\index.html:13 .\templates\reviews\index.html:17
+#: .\templates\training\index.html:12
+msgid "title"
+msgstr "Заголовок"
+
+#: .\templates\payment\create.html:6 .\templates\payment\edit.html:6
+#: .\templates\payment\read.html:10
+msgid "payment"
+msgstr "Платежи"
+
+#: .\templates\payment\index.html:9
+msgid "list"
+msgstr "Список"
+
+#: .\templates\payment\index.html:12 .\templates\payment\index.html:58
+msgid "report"
+msgstr "Отчет"
+
+#: .\templates\payment\index.html:60
+msgid "Export to Excel"
+msgstr "Экспорт в Excel"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Logged out!"
+msgstr "Вы вышли"
+
+#: .\templates\registration\logged_out.html:7
+msgid "Login again"
+msgstr "Войти снова"
+
+#: .\templates\registration\login.html:7
+msgid "Incorrect login or password"
+msgstr "Неверный логин или пароль"
+
+#: .\templates\registration\login.html:12
+msgid "You dont have access"
+msgstr "У вас нет доступа"
+
+#: .\templates\registration\login.html:14
+msgid "Login to see this page"
+msgstr "Войдите, чтобы увидеть эту страницу"
+
+#: .\templates\registration\login.html:22
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: .\templates\registration\login.html:27
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: .\templates\registration\login.html:33
+msgid "Lost password?"
+msgstr "Забыли пароль?"
+
+#: .\templates\registration\login.html:34
+#: .\templates\registration\signup.html:15
+msgid "Create an account"
+msgstr "Завести аккаунт"
+
+#: .\templates\registration\my_account.html:15
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: .\templates\registration\password_change_done.html:5
+msgid "Password changed"
+msgstr "Пароль изменен"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password reset completed!"
+msgstr "Сброс пароля завершен!"
+
+#: .\templates\registration\password_reset_complete.html:7
+msgid "Log in again?"
+msgstr "Войти снова?"
+
+#: .\templates\registration\password_reset_confirm.html:5
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Password reset confirmation"
+msgstr "Подтверждение сброса пароля"
+
+#: .\templates\registration\password_reset_confirm.html:18
+#: .\templates\registration\password_reset_form.html:10
+#: .\templates\registration\password_reset_form.html:16
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_confirm.html:26
+msgid "Please enter (and confirm) your new password."
+msgstr "Пожалуйста, введите (и подтвердите) новый пароль."
+
+#: .\templates\registration\password_reset_confirm.html:32
+msgid "New password:"
+msgstr "Новый пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:37
+msgid "Confirm password:"
+msgstr "Подтвердить пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:48
+msgid "Password reset failed"
+msgstr "Не удалось сбросить пароль"
+
+#: .\templates\registration\password_reset_confirm.html:49
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Ссылка для сброса пароля недействительна, возможно, из-за того, что "
+"использовано. Пожалуйста, запросите новый сброс пароля."
+
+#: .\templates\registration\password_reset_done.html:6
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_done.html:7
+msgid "Check your email"
+msgstr "Проверьте свою электронную почту"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Asked password reset email"
+msgstr "Электронная почта для сброса пароля"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Follow the link below:"
+msgstr "Перейдите по ссылке ниже:"
+
+#: .\templates\registration\register_done.html:10
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\registration\register_done.html:11
+msgid "Your account has been successfully created."
+msgstr "Ваша учетная запись успешно создана."
+
+#: .\templates\registration\register_done.html:11
+#: .\templates\registration\signup.html:20
+msgid "Log in"
+msgstr "Авторизоваться"
+
+#: .\templates\registration\signup.html:20
+msgid "Already have an account?"
+msgstr "У вас уже есть аккаунт?"
+
+#: .\templates\reviews\index.html:4 .\templates\reviews\list.html:4
+msgid "reviewss"
+msgstr "Отзывы"
+
+#: .\templates\teachers\index.html:3 .\templates\teachers\index.html:6
+#: .\templates\teachers\list.html:4 .\templates\teachers\list.html:8
+#: .\templates\teachers\list.html:9
+msgid "teacherss"
+msgstr "Наши преподаватели"
+
+#: .\templates\training\index.html:3 .\templates\training\index.html:6
+msgid "trainings"
+msgstr "Курсы"
+
+#~ msgid "Home"
+#~ msgstr "☼"

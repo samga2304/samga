@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "teacherss" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "teacherss" %}</h2>
+{% if teachers.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "surname" %}</p></th>
+				<th><p>{% trans "name" %}</p></th>
+				<th><p>{% trans "patronymic" %}</p></th>
+				<th><p><a href="{% url 'teachers_create'%}">{% trans "Add" %}</a></p></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in teachers %}
+			<tr>
+				<td>
+					<p>{{ n.surname }}</p>
+				</td>
+				<td>
+					<p>{{ n.name }}</p>						
+				</td>
+				<td>
+					<p>{{ n.patronymic }}</p>						
+				</td>
+				<td>
+					<a href="{% url 'teachers_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'teachers_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'teachers_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'teachers_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

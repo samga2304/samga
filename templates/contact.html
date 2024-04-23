@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="div-width-100-text-center">
+	<h3>{% trans "contacts" %}</h3>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-3">
+		{% if LANGUAGE_CODE == 'kk' %}
+			<h3 align="center">«Samga Academy» </h3>
+			<h5 align="center">Қарағанды қаласы бойынша №1 ҰБТ-ға дайындық орталығы</h5>
+			<p>Біздің мекен-жайымыз: Бұхар Жырау даңғылы, 51/4, 3 қабат, 306 офис</p>
+			<p>Instagram парақшамыз: <a href="http://instagram.com/_u/samga_academy/">@samga_academy</a></p>
+		{% else %}
+			<h3 align="center">«Samga Academy»</h3>
+			<h5 align="center">Центр №1 подготовки к ЕНТ в городе Караганда</h5>
+			<p>306 кабинет, ул. Воинов-интернационалистов 51/4, Караганда 100000</p>
+			<p>Instagram: <a href="http://instagram.com/_u/samga_academy/">@samga_academy</a></p>			
+		{% endif %}
+		<address>
+			<a href="mailto:samga.academy@gmail.com">samga.academy@gmail.com</a>						
+		</address>				
+		<p>Телефон: <a href="tel+77780787378">+7(778)-078-7378</a><p>		
+	</div>
+	<div class="col-md-9" style="position:relative;overflow:hidden;">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.025727954595!2d73.08171151570808!3d49.804383979391424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4243473e90ecd86b%3A0x385214bdc43a635d!2sSamga%20Academy!5e0!3m2!1sru!2skz!4v1670382188825!5m2!1sru!2skz" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	</div>
+</div>
+{% endblock content %}

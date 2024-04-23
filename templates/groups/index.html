@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "groupss" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "groups" %}</h2>
+{% if groups.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "training" %}</p></th>
+				<th><p>{% trans "group_title" %}</p></th>
+				<th><p>{% trans "details" %}</p></th>
+				<th><p>{% trans "teachers" %}</p></th>
+				<th><p><a href="{% url 'groups_create'%}">{% trans "Add" %}</a></p></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in groups %}
+			<tr>
+				<td>
+					<p>{{ n.training }}</p>
+				</td>
+				<td>
+					<p>{{ n.title }}</p>
+				</td>
+				<td>
+					<p>{{ n.details }}</p>						
+				</td>
+				<td>
+					<p>{{ n.teachers.fio_short }}</p>						
+				</td>
+				<td>
+					<a href="{% url 'groups_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'groups_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'groups_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'groups_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "claims" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "claims" %}</h2>
+{% if claim.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "dater" %}</p></th>
+				<th><p>{% trans "training" %}</p></th>
+				<th><p>{% trans "details" %}</p></th>
+				<th><p>{% trans "result" %}</p></th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in claim %}
+			<tr>
+				<td>
+					<p>{{ n.dater | date:"d.m.Y H:i"}}</p>
+					<p>{{ n.user }}, {{ n.user.first_name }} {{ n.user.last_name }}</p>
+				</td>
+				<td>
+					<p>{{ n.training }}</p>						
+				</td>
+				<td>
+					<p>{{ n.details }}</p>						
+				</td>
+				<td>
+					<p>{{ n.result }}</p>						
+				</td>
+				<td>
+					<a href="{% url 'claim_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'claim_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'claim_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'claim_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

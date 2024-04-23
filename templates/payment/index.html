@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "payments" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<div class="container">
+	<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">{% trans "list" %}</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">{% trans "report" %}</button>
+		</li>			
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
+			<h2>{% trans "payments" %}</h2>
+			{% if payment.count > 0 %}
+			<div class="row">
+				<table id="myTable" class="table-manager" style="width:100%">
+					<thead>
+						<tr>
+							<th><p>{% trans "datep" %}</p></th>
+							<th><p>{% trans "user" %}</p></th>
+							<th><p>{% trans "amount" %}</p></th>
+							<th><p><a href="{% url 'payment_create'%}">{% trans "Add" %}</a></p></th>				
+						</tr>
+					</thead>
+					<tbody>
+						{% for n in payment %}
+						<tr>
+							<td>
+								<p>{{ n.datep | date:"d.m.Y H:i" }}</p>
+							</td>
+							<td>
+								<p>{{ n.user.last_name}} {{ n.user.first_name}}</p>
+								<p>({{ n.user.username }})</p>
+							</td>
+							<td>
+								<p>{{ n.amount }}</p>
+							</td>
+							<td>
+								<a href="{% url 'payment_edit' n.id %}">{% trans "Change" %}</a> |
+								<a href="{% url 'payment_read' n.id %}">{% trans "View" %}</a> |
+								<a onclick="return confirm('Удалить запись?')" href="{% url 'payment_delete' n.id %}">{% trans "Delete" %}</a>
+							</td>			
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			{% else %}
+			<a href="{% url 'payment_create'%}">{% trans "Create" %}</a>
+			{% endif %}
+				
+		</div>
+		<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">
+			<h2>{% trans "report" %}</h2>
+			<div class="row">
+				<p><a href="{% url 'export_excel' %}">{% trans "Export to Excel" %}</a></p>
+			</div>				
+			<div class="row">
+				<table id="myTable2" class="table-manager" style="width:100%">
+					<thead>
+						<tr>
+							<th><p>{% trans "year" %}</p></th>
+							<th><p>{% trans "month" %}</p></th>
+							<th><p>{% trans "user" %}</p></th>
+							<th><p>{% trans "amount" %}</p></th>
+							<th><p>{% trans "total" %}</p></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for n in report %}
+						<tr>
+							<td><p>{{ n.year }}</p></td>
+							<td><p>{{ n.month }}</p></td>
+							<td><p>{{ n.last_name}} {{ n.first_name}}</p><p>({{ n.username }})</p></td>
+							<td><p>{{ n.amount }}</p></td>
+							<td><p>{{ n.total }}</p></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>			
+		</div>
+	</div>		
+</div>
+{% endblock content %}

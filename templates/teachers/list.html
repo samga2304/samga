@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "teacherss" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<div class="div-width-100-text-center">
+	<!-- <h3 style="text-transform: uppercase">{% trans "teacherss" %}</h3> -->
+	<h3>{% trans "teacherss" %}</h3>
+</div>
+<br>
+{% load humanize %}
+{% if teachers.count > 0 %}
+<div class="row">
+	<table id="myTable" style="width:100%">
+		<thead>
+			<tr>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for t in teachers %}
+			<tr>
+				<td>
+					<div class="card">
+						<div class="card-header">
+							<h5>{{ t.fio }}</h5>
+						</div>
+						<div class="card-body">					
+							<div class="row">
+								<div class="col-md-8">
+									<p>{{ t.details }}</p>
+								</div>								
+								<div class="col-md-4">
+									{% if t.photo.url == "/ media /images/woman1.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman1.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/woman2.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman2.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/woman3.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman3.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/woman4.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman4.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/woman5.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman5.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/woman6.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman6.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/woman7.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/woman7.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/male1.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/male1.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/male2.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/male2.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% elif t.photo.url == "/ media /images/male3.jpg" %}
+										<img style="width:100%; max-width:400px;padding:10px;" src="{% static 'images/male3.jpg' %}" alt="{{ t.fio }}" title="{{ t.details }}">    
+									{% else %}
+										{% if t.photo.url != None %}
+											<img class="center" style="max-width:400px;padding:10px;" src="{{ t.photo.url}}" alt="{{ t.fio }}" title="{{ t.details }}">
+										{% endif %}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><strong>{{ t.details }}</strong><p>
+						</div>
+					</div>
+				</td>	
+			</tr>
+			{% endfor %}	
+		</tbody>
+	</table>	
+</div>
+{% endif %}
+{% endblock content %}
+

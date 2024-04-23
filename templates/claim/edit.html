@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Change" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "claim" %}</h2>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	
+	<table>
+		<tr>
+			<th><label for="id_user">{% trans "dater" %}</label></th>
+			<td>{{ dater | date:"d.m.Y H:i"}}</td>
+		</tr>
+		<tr>
+			<th><label for="id_user">{% trans "user" %}</label></th>
+			<td>{{ user }}</td>
+		</tr>
+		<tr>
+			<th><label for="id_training">{% trans "training" %}</label></th>
+			<td>{{ training }}</td>
+		</tr>
+		<tr>
+			<th><label for="id_details">{% trans "Claim_details" %}</label></th>
+			<td>{{ details }}</td>
+		</tr>
+	</table>
+	
+	
+    <table>
+        {{ form }}
+    </table>
+	<div class="div-button-left">
+		<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>
+		<a class="btn btn-outline-info" style="width:100px" href="{% url 'claim_index' %}">{% trans "Back" %}</a>    
+	</div>
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

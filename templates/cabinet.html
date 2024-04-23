@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="div-width-100-text-center">
+	<h3>{% trans "cabinet" %}</h3>
+</div>
+<br>
+<h2>{{ user_info }}</h2>
+<hr>
+<a href="{% url 'my_account' %}">{% trans "My account" %}</a>
+<hr>
+<a href="{% url 'password_change' %}">{% trans "Change password" %}</a>
+<hr>
+{% if members.count > 0 %}
+<h2>{% trans "training" %}</h2>
+<div class="row">
+	<table id="myTable3" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "training" %}</p></th>
+				<th><p>{% trans "group_title" %}</p></th>
+				<th><p>{% trans "user" %}</p></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in members %}
+			<tr>
+				<td>
+					<p>{{ n.groups.training }}</p>
+				</td>
+				<td>
+					<p>{{ n.groups.title }}</p>
+				</td>
+				<td>
+					<p>{{ n.user.last_name }} {{ n.user.first_name }}</p>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<hr>
+{% endif %}
+
+{% if schedule != None%}
+<h2>{% trans "schedules" %}</h2>
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "dates" %}</p></th>
+				<th><p>{% trans "training" %}</p></th>
+				<th><p>{% trans "group_title" %}</p></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in schedule %}
+			<tr>
+				<td>
+					<p>{{ n.dates | date:"d.m.Y H:i" }}</p>
+				</td>
+				<td>
+					<p>{{ n.training_title }}</p>
+				</td>
+				<td>
+					<p>{{ n.groups_title }}</p>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<hr>
+{% endif %}
+
+{% if payment.count > 0 %}
+<h2>{% trans "payments" %}</h2>
+<div class="row">
+	<table id="myTable2" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "datep" %}</p></th>
+				<th><p>{% trans "user" %}</p></th>
+				<th><p>{% trans "amount" %}</p></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in payment %}
+			<tr>
+				<td>
+					<p>{{ n.datep | date:"d.m.Y H:i" }}</p>
+				</td>
+				<td>
+					<p>{{ n.user.last_name}} {{ n.user.first_name}}</p>
+				</td>
+				<td>
+					<p>{{ n.amount }}</p>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<hr>
+{% endif %}
+
+{% endblock content %}

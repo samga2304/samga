@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "memberss" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "memberss" %}</h2>
+{% if members.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p>{% trans "training" %}</p></th>
+				<th><p>{% trans "group_title" %}</p></th>
+				<th><p>{% trans "user" %}</p></th>
+				<th><p><a href="{% url 'members_create'%}">{% trans "Add" %}</a></p></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in members %}
+			<tr>
+				<td>
+					<p>{{ n.groups.training }}</p>
+				</td>
+				<td>
+					<p>{{ n.groups.title }}</p>
+				</td>
+				<td>
+					<p>{{ n.user.last_name }} {{ n.user.first_name }}</p>
+					<p>({{ n.user.username }})</p>
+				</td>
+				<td>
+					<a href="{% url 'members_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'members_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'members_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'members_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

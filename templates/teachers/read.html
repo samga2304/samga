@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "teachers" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h4>{{ teachers.surname }} {{ teachers.name }} {{ teachers.patronymic }}</h4>			
+		</div>
+		<div class="card-body">	
+			<div class="row">
+				<div class="col-md-8">				
+					<h5>{{ teachers.details }}</h5>					
+				</div>
+				<div class="col-md-4">
+					{% if teachers.photo.url == "/ media /images/woman1.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman1.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/woman2.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman2.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/woman3.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman3.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/woman4.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman4.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/woman5.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman5.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/woman6.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman6.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/woman7.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/woman7.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/male1.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/male1.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/male2.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/male2.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% elif teachers.photo.url == "/ media /images/male3.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/male3.jpg' %}" alt="{{ teachers.fio }}" title="{{ teachers.details }}">    
+					{% else %}
+						{% if teachers.photo.url != None %}
+							<img style="width:100%; max-width:400px;" src="{{ teachers.photo.url}}" alt="{{ teachers.title }}" title="{{ teachers.details }}">
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>				
+		
+		</div>
+		<div class="card-footer">				
+			<p></p>			
+		</div>		
+	</div>
+	<div class="div-button-left">
+		<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'teachers_index' %}">{% trans "Back" %}</a>    
+	</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "groups" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h5>{{ groups.training }}</h5>			
+			<h4>{{ groups.title }}</h4>			
+		</div>
+		<div class="card-body">		
+			<p>{{ groups.details }}</p>					
+		</div>
+		<div class="card-footer">				
+			<p>{% trans "teachers" %}: {{ groups.teachers }}</p>			
+		</div>		
+	</div>
+	<div class="div-button-left">
+		<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'groups_index' %}">{% trans "Back" %}</a>    
+	</div>
+</div>
+{% if members.count > 0 %}
+<div class="row" id="print_content">
+	<h2>{% trans "memberss" %}</h2>
+	<h5>{{ groups.training }}</h5>			
+	<h4>{{ groups.title }}</h4>			
+	<table id="myTable" class="table-manager" style="width:100%">
+		<tbody>
+			{% for n in members %}
+			<tr>
+				<td>
+					<p>{{ n.user.last_name }} {{ n.user.first_name }} ({{ n.user.username }})</p>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<button class="btn btn-outline-info" name = "print" id ="print" onclick='printDiv("print_content")' style="text-align: center;width:150px">{% trans "Print" %}</button>
+
+{% endif %}
+<script>
+	function printDiv(divName) {
+		// Печать контейнера div
+		//alert(divName);
+		var printContents = document.getElementById(divName).innerHTML;
+		var originalContents = document.body.innerHTML;
+		document.body.innerHTML = printContents;
+		window.print();
+		document.body.innerHTML = originalContents;
+	}
+</script>
+{% endblock content %}
