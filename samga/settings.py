@@ -179,12 +179,20 @@ LOGOUT_REDIRECT_URL = '/'
 LOGOUT_URL = '/'
 
 #Сохранения изображения
+#CLOUDINARY_STORAGE = {
+#    'CLOUD_NAME': 'dwvyooc7m',
+#    'API_KEY': '268241926117228',
+#    'API_SECRET': 'uvcsfjn54MH3R6xdc-lPhcXuk9w',
+#}
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+#Сохранения изображения
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwvyooc7m',
-    'API_KEY': '268241926117228',
-    'API_SECRET': 'uvcsfjn54MH3R6xdc-lPhcXuk9w',
+    'CLOUD_NAME': 'dgcvsv9du',
+    'API_KEY': '778854534632116',
+    'API_SECRET': 'Gj-LnisUyJX2JxyOLzRGYfSO0AQ',
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Сброс пароля по E-Mail
 EMAIL_TIMEOUT = 300

@@ -97,23 +97,27 @@ def teachers_index(request):
 @login_required
 @group_required("Managers")
 def teachers_create(request):
-    if request.method == "POST":
-        teachers = Teachers()        
-        teachers.surname = request.POST.get("surname")
-        teachers.name = request.POST.get("name")
-        teachers.patronymic = request.POST.get("patronymic")
-        teachers.details = request.POST.get("details")
-        if 'photo' in request.FILES:                
-            teachers.photo = request.FILES['photo']
-        teachersform = TeachersForm(request.POST)
-        if teachersform.is_valid():
-            teachers.save()
-            return HttpResponseRedirect(reverse('teachers_index'))
-        else:
-            return render(request, "teachers/create.html", {"form": teachersform})
-    else:        
-        teachersform = TeachersForm()
+    try:
+        if request.method == "POST":
+            teachers = Teachers()        
+            teachers.surname = request.POST.get("surname")
+            teachers.name = request.POST.get("name")
+            teachers.patronymic = request.POST.get("patronymic")
+            teachers.details = request.POST.get("details")
+            if 'photo' in request.FILES:                
+                teachers.photo = request.FILES['photo']
+            teachersform = TeachersForm(request.POST)
+            if teachersform.is_valid():
+                teachers.save()
+                return HttpResponseRedirect(reverse('teachers_index'))
+            else:
+                return render(request, "teachers/create.html", {"form": teachersform})
+        else:        
+            teachersform = TeachersForm()
         return render(request, "teachers/create.html", {"form": teachersform})
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
 
 # Функция edit выполняет редактирование объекта.
 # Функция в качестве параметра принимает идентификатор объекта в базе данных.
@@ -139,8 +143,9 @@ def teachers_edit(request, id):
             # Загрузка начальных данных
             teachersform = TeachersForm(initial={'surname': teachers.surname, 'name': teachers.name, 'patronymic': teachers.patronymic, 'details': teachers.details, 'photo': teachers.photo  })
             return render(request, "teachers/edit.html", {"form": teachersform})
-    except Teachers.DoesNotExist:
-        return HttpResponseNotFound("<h2>Teachers not found</h2>")
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
 
 # Удаление данных из бд
 # Функция delete аналогичным функции edit образом находит объет и выполняет его удаление.
@@ -696,30 +701,26 @@ def news_list(request):
 @login_required
 @group_required("Managers")
 def news_create(request):
-    if request.method == "POST":
-        news = News()        
-        newsform = NewsForm(request.POST)        
-        dt = request.POST.get("daten")
-        try:
-            #print(dt)
-            valid_date = time.strptime(dt, '%Y-%m-%d %H:%M:%S')          
-        except ValueError:
-            return render(request, "news/create.html", {"form": newsform}) 
-        news.daten = datetime.datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
-        #news.daten = request.POST.get("daten")
-        news.title = request.POST.get("title")
-        news.details = request.POST.get("details")
-        if 'photo' in request.FILES:                
-            news.photo = request.FILES['photo']        
-        if newsform.is_valid():
-            news.save()
-            return HttpResponseRedirect(reverse('news_index'))
-        else:
-            return render(request, "news/create.html", {"form": newsform})     
-    else:        
-        #newsform = NewsForm(request.FILES, initial={'daten': datetime.datetime.now().strftime('%Y-%m-%d'),})
-        newsform = NewsForm(initial={'daten': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), })
-        return render(request, "news/create.html", {"form": newsform})
+    try:
+        if request.method == "POST":
+            news = News()        
+            news.daten = request.POST.get("daten")
+            news.title = request.POST.get("title")
+            news.details = request.POST.get("details")
+            if 'photo' in request.FILES:                
+                news.photo = request.FILES['photo']   
+            newsform = NewsForm(request.POST)
+            if newsform.is_valid():
+                news.save()
+                return HttpResponseRedirect(reverse('news_index'))
+            else:
+                return render(request, "news/create.html", {"form": newsform})
+        else:        
+            newsform = NewsForm(initial={'daten': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), })
+            return render(request, "news/create.html", {"form": newsform})
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
 
 # Функция edit выполняет редактирование объекта.
 # Функция в качестве параметра принимает идентификатор объекта в базе данных.
@@ -729,30 +730,27 @@ def news_edit(request, id):
     try:
         news = News.objects.get(id=id) 
         if request.method == "POST":
-            newsform = NewsForm(request.POST)
-            dt = request.POST.get("daten")
-            try:
-                #print(dt)
-                valid_date = time.strptime(dt, '%Y-%m-%d %H:%M:%S')          
-            except ValueError:
-                return render(request, "news/edit.html", {"form": newsform}) 
-            news.daten = datetime.datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
-            #news.daten = request.POST.get("daten")
+            news.daten = request.POST.get("daten")
             news.title = request.POST.get("title")
             news.details = request.POST.get("details")
             if "photo" in request.FILES:                
                 news.photo = request.FILES["photo"]
+            newsform = NewsForm(request.POST)
             if newsform.is_valid():
                 news.save()
                 return HttpResponseRedirect(reverse('news_index'))
             else:
-                return render(request, "news/edit.html", {"form": newsform})  
+                return render(request, "news/edit.html", {"form": newsform})
         else:
             # Загрузка начальных данных
             newsform = NewsForm(initial={'daten': news.daten.strftime('%Y-%m-%d %H:%M:%S'), 'title': news.title, 'details': news.details, 'photo': news.photo })
             return render(request, "news/edit.html", {"form": newsform})
     except News.DoesNotExist:
         return HttpResponseNotFound("<h2>News not found</h2>")
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
+
 
 # Удаление данных из бд
 # Функция delete аналогичным функции edit образом находит объет и выполняет его удаление.

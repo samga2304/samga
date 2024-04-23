@@ -212,7 +212,7 @@ class NewsForm(forms.ModelForm):
         model = News
         fields = ('daten', 'title', 'details', 'photo')
         widgets = {
-            'dater': DateTimeInput(format='%d/%m/%Y %H:%M:%S'),
+            'daten': DateTimeInput(format='%d/%m/%Y %H:%M:%S'),
             'title': TextInput(attrs={"size":"100"}),
             'details': Textarea(attrs={'cols': 100, 'rows': 10}),                        
         }
