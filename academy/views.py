@@ -482,11 +482,17 @@ def schedule_read(request, id):
 @group_required("Managers")
 def payment_index(request):
     payment = Payment.objects.all().order_by('datep')
+#    report = Payment.objects.raw("""
+#SELECT 1 as id, strftime('%Y', payment.datep) as year, strftime('%m', payment.datep) as month, auth_user.last_name, auth_user.first_name, auth_user.username, SUM(payment.amount) AS amount,
+#(SELECT SUM(p.amount) FROM payment p WHERE  p.user_id = payment.user_id) as total
+#FROM payment LEFT JOIN auth_user ON payment.user_id = auth_user.id
+#GROUP BY strftime('%Y', payment.datep), strftime('%m', payment.datep), auth_user.last_name, auth_user.first_name, auth_user.username
+#""")
     report = Payment.objects.raw("""
-SELECT 1 as id, strftime('%Y', payment.datep) as year, strftime('%m', payment.datep) as month, auth_user.last_name, auth_user.first_name, auth_user.username, SUM(payment.amount) AS amount,
+SELECT 1 as id,  date_part('year', payment.datep) as year, date_part('month', payment.datep) as month, payment.user_id, auth_user.last_name, auth_user.first_name, auth_user.username, SUM(payment.amount) AS amount,
 (SELECT SUM(p.amount) FROM payment p WHERE  p.user_id = payment.user_id) as total
 FROM payment LEFT JOIN auth_user ON payment.user_id = auth_user.id
-GROUP BY strftime('%Y', payment.datep), strftime('%m', payment.datep), auth_user.last_name, auth_user.first_name, auth_user.username
+GROUP BY date_part('year', payment.datep), date_part('month', payment.datep), payment.user_id, auth_user.last_name, auth_user.first_name, auth_user.username
 """)
     return render(request, "payment/index.html", {"payment": payment, "report": report})
 
