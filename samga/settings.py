@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'academy',
     'django_cleanup',
-    'widget_tweaks',    
+    'widget_tweaks',
     'crispy_forms',
     'crispy_bootstrap4',
-    'django.contrib.humanize',
     'cloudinary_storage',
     'cloudinary',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -58,10 +58,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',    
 ]
 
 ROOT_URLCONF = 'samga.urls'
+
+# установить Bootstrap 4 в качестве структуры стилей по умолчанию для django-crispy-forms:
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
@@ -164,12 +167,11 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Для работы с медиафайлами
-MEDIA_URL = '/ media /'
-MEDIA_ROOT = os.path.join (BASE_DIR, 'media')
-
-# установить Bootstrap 4 в качестве структуры стилей по умолчанию для django-crispy-forms:
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# MEDIA_ROOT - это абсолютный путь файловой системы к каталогу для загруженных пользователем файлов.
+# MEDIA_URL - это URL-адрес, который можно использовать в наших шаблонах для файлов.
+# Папку media необходимо создать в корневой папке проекта
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
+MEDIA_URL = '/media/'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 # Теперь, при входе в систему, вы по умолчанию должны перенаправляться на домашнюю страницу сайта а не на /accounts/profile/
@@ -179,17 +181,10 @@ LOGOUT_REDIRECT_URL = '/'
 LOGOUT_URL = '/'
 
 #Сохранения изображения
-#CLOUDINARY_STORAGE = {
-#    'CLOUD_NAME': 'dwvyooc7m',
-#    'API_KEY': '268241926117228',
-#    'API_SECRET': 'uvcsfjn54MH3R6xdc-lPhcXuk9w',
-#}
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-#Сохранения изображения
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dgcvsv9du',
-    'API_KEY': '778854534632116',
-    'API_SECRET': 'Gj-LnisUyJX2JxyOLzRGYfSO0AQ',
+    'CLOUD_NAME': 'dwvyooc7m',
+    'API_KEY': '268241926117228',
+    'API_SECRET': 'uvcsfjn54MH3R6xdc-lPhcXuk9w',
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
